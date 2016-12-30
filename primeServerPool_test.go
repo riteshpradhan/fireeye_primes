@@ -1,8 +1,8 @@
 /*
 * @Author: ritesh
 * @Date:   2016-12-29 14:50:52
-* @Last Modified by:   ritesh
-* @Last Modified time: 2016-12-29 18:06:39
+* @Last Modified by:   Ritesh Pradhan
+* @Last Modified time: 2016-12-29 18:35:16
 */
 
 package main
@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"strings"
 	"testing"
 
 	// "github.com/delaemon/go-uuidv4"
@@ -137,7 +138,7 @@ func TestGetAllResults(t *testing.T) {
 			t.Errorf("Status Code didn't match:\n\t%q\n\t%q", c.expectedResponseCode, c.w.Code)
 		}
 
-		if c.w.Body.String() != string(c.expectedResponseBody) {
+		if !strings.Contains(string(c.expectedResponseBody),  strings.Split(c.w.Body.String(), "\n")[0]) {
 			t.Errorf("Body didn't match:\n\t%q\n\t%q", string(c.expectedResponseBody), c.w.Body.String())
 		}
 	}
