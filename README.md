@@ -1,15 +1,14 @@
 Usage:
 ------------------
-go run primeServerPool.go  -max_workers=10 -max_queue_size=15
+`go run primeServerPool.go  -max_workers=10 -max_queue_size=15`
 
 
 Requests
 -------------------------
-curl -XPOST 'http://localhost:8080/primes?start_num=-31&end_num=2'
-curl -XPOST 'http://localhost:8080/primes?start_num=5&end_num=20'
-
-curl -XGET 'http://localhost:8080/results'
-curl -XGET 'http://localhost:8080/result?id=fa18788c-40f0-4afc-92ee-2fd6b52e7712'
+- curl -XPOST 'http://localhost:8080/primes?start_num=-31&end_num=2'
+- curl -XPOST 'http://localhost:8080/primes?start_num=5&end_num=20'
+- curl -XGET 'http://localhost:8080/results'
+- curl -XGET 'http://localhost:8080/result?id=fa18788c-40f0-4afc-92ee-2fd6b52e7712'
 
 
 External imports
